@@ -3,7 +3,7 @@
 {% block content %}
 <div class="clearfix">
     <span class="left m-2" style="font-size: 20px;">Bienvenido, {{ request.user }}</span>
-    <a class="btn btn-info right" href="{% url 'accounts:signout' %}"> Cerrar Sesión</a>
+    
 	<a class="btn btn-info right mr-2" href="{% url 'calendarapp:calendar' %}?{{ next_month }} "> Mes Siguiente >> </a>
     <a class="btn btn-info right mr-2" href="{% url 'calendarapp:calendar' %}?{{ prev_month }}"> << Mes Anterior </a>
     <a class="btn btn-info right mr-2" href="{% url 'calendarapp:event_new' %}"> + Agregar Evento </a>

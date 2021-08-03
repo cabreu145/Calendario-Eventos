@@ -11,11 +11,11 @@ class EventForm(ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter event title'
+                'placeholder': 'Nombre del Evento'
             }),
             'description': forms.Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter event description'
+                'placeholder': 'Descripción del Evento'
             }),
             'start_time': DateInput(
                 attrs={'type': 'datetime-local', 'class': 'form-control'},
