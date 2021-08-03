@@ -6,7 +6,7 @@ from calendarapp.models import Event
 
 
 class DashboardView(LoginRequiredMixin, View):
-    login_url = 'accounts:signin'
+
     template_name = 'calendarapp/dashboard.html'
 
     def get(self, request, *args, **kwargs):
