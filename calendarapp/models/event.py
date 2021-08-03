@@ -10,13 +10,13 @@ class EventManager(models.Manager):
     """ Event manager """
     def get_all_events(self, user):
         events = Event.objects.filter(
-            user=user, is_active=True, is_deleted=False
+             is_active=True, is_deleted=False
         )
         return events
 
     def get_running_events(self, user):
         running_events = Event.objects.filter(
-            user=user, is_active=True, is_deleted=False,
+             is_active=True, is_deleted=False,
             end_time__gte=datetime.now().date()
         ).order_by('start_time')
         return running_events

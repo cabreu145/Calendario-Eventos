@@ -27,8 +27,10 @@
                     {% for event in events_month %}
                       <div class="fc-event">
                           <h3>{{ event.title }}</h3>
-                          <p>De: {{ event.start_time }}</p>
-                          <p>Para: {{ event.end_time }}</p>
+                          <p>Comienza: {{ event.start_time|date:'l j F  Y' }} {{ event.start_time.time|time:'h:i a' }} </p>
+                          <p>Termina: {{ event.end_time|date:'l j F  Y' }} {{ event.end_time.time|time:'h:i a' }}</p>
+                          <a  href="{% url 'calendarapp:event-detail' event.id %}" class="btn btn-light" role="button">Ver detalles</a>
+                          
                       </div>
                     {% empty %}
                       <p>No tiene eventos en proceso</p>

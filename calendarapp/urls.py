@@ -1,4 +1,7 @@
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 from . import views
 
@@ -10,7 +13,7 @@ urlpatterns = [
     path('calenders/', views.CalendarView.as_view(), name='calendars'),
     path('event/new/', views.create_event, name='event_new'),
     path(
-        'event/edit/<int:pk>/', views.EventEdit.as_view(), name='event_edit'
+        'event/edit/<int:pk>/', views.EventEdit.as_view(), name='event-edit'
     ),
     path(
         'event/<int:event_id>/details/', views.event_details,
@@ -32,4 +35,4 @@ urlpatterns = [
         'running-event-list/', views.RunningEventsListView.as_view(),
         name="running_events"
     ),
-]
+]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
